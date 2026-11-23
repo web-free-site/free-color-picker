@@ -1,0 +1,13 @@
+name = "free-color-picker"
+main = "worker.js"
+compatibility_date = "2024-11-01"
+
+[assets]
+directory = "./dist"
+binding = "ASSETS"
+html_handling = "auto-trailing-slash"
+not_found_handling = "none"
+
+[[routes]]
+pattern = "free-color-picker.web-free.site"
+custom_domain = true

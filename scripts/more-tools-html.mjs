@@ -1,0 +1,105 @@
+/** Shared “More free tools” block — injected on every prerendered HTML page. */
+export const MORE_TOOLS_BLOCK = `
+<aside id="wf-more-tools" class="wf-more-tools" aria-labelledby="wf-mt-title">
+  <style>
+    .wf-more-tools{box-sizing:border-box;width:100%;margin:2.5rem 0 0;padding:1.5rem 1rem 5rem;border-top:1px solid rgba(0,0,0,.12);background:rgba(248,249,251,.97);color:#1a1a1a;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;font-size:15px;line-height:1.5}
+    .wf-more-tools *{box-sizing:border-box}
+    .wf-more-tools h2{margin:0 0 .35rem;font-size:1.15rem;font-weight:700}
+    .wf-more-tools .wf-mt-lead{margin:0 0 1rem;color:#333}
+    .wf-more-tools .wf-mt-lead a{color:#0b57d0}
+    .wf-more-tools .wf-mt-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1rem 1.25rem}
+    .wf-more-tools h3{margin:0 0 .4rem;font-size:.8rem;text-transform:uppercase;letter-spacing:.04em;color:#444}
+    .wf-more-tools ul{margin:0;padding:0;list-style:none}
+    .wf-more-tools li{margin:0 0 .25rem}
+    .wf-more-tools a{color:#0b57d0;text-decoration:underline}
+    .wf-more-tools a:hover{text-decoration:none}
+    @media (prefers-color-scheme:dark){
+      .wf-more-tools{background:rgba(22,24,28,.96);color:#f2f2f2;border-top-color:rgba(255,255,255,.14)}
+      .wf-more-tools .wf-mt-lead,.wf-more-tools h3{color:#c8c8c8}
+      .wf-more-tools a{color:#8ab4f8}
+    }
+  </style>
+  <h2 id="wf-mt-title">More free tools</h2>
+  <p class="wf-mt-lead">These utilities run in your browser. Browse the full list on <a href="https://web-free.site/?ref=color-picker">web-free.site</a>.</p>
+  <div class="wf-mt-grid">
+    <div class="wf-mt-cat wf-mt-guides"><h3>Guides on this site</h3><ul>
+      <li><a href="/hex-color-picker">HEX color picker</a></li>
+      <li><a href="/color-picker-from-image">Color picker from image</a></li>
+      <li><a href="/rgb-to-hex">RGB to HEX</a></li>
+    </ul></div>
+    <div class="wf-mt-cat"><h3>Documents &amp; writing</h3><ul>
+      <li><a href="https://free-word-counter.web-free.site/?ref=color-picker">Free Word Counter</a></li>
+      <li><a href="https://free-pdf-converter.web-free.site/?ref=color-picker">Free PDF Converter</a></li>
+      <li><a href="https://free-cv-maker.web-free.site/?ref=color-picker">Free CV Maker</a></li>
+      <li><a href="https://free-invoice-generator.web-free.site/?ref=color-picker">Free Invoice Generator</a></li>
+      <li><a href="https://free-typing-test.web-free.site/?ref=color-picker">Free Typing Test</a></li>
+      <li><a href="https://free-signature-generator.web-free.site/?ref=color-picker">Free Signature Generator</a></li>
+      <li><a href="https://free-email-signature-generator.web-free.site/?ref=color-picker">Free Email Signature Generator</a></li>
+    </ul></div>
+    <div class="wf-mt-cat"><h3>Images &amp; codes</h3><ul>
+      <li><a href="https://free-qr-code-creator.web-free.site/?ref=color-picker">Free QR Code Creator</a></li>
+      <li><a href="https://free-image-resizer.web-free.site/?ref=color-picker">Free Image Resizer</a></li>
+      <li><a href="https://free-image-to-text.web-free.site/?ref=color-picker">Free Image to Text</a></li>
+      <li><a href="https://free-background-remover.web-free.site/?ref=color-picker">Free Background Remover</a></li>
+      <li><a href="https://free-image-compressor.web-free.site/?ref=color-picker">Free Image Compressor</a></li>
+      <li><a href="https://free-heic-to-jpg.web-free.site/?ref=color-picker">Free HEIC to JPG Converter</a></li>
+      <li><a href="https://free-image-upscaler.web-free.site/?ref=color-picker">Free Image Upscaler</a></li>
+      <li><a href="https://free-passport-photo-maker.web-free.site/?ref=color-picker">Free Passport Photo Maker</a></li>
+      <li><a href="https://free-png-to-svg.web-free.site/?ref=color-picker">Free PNG to SVG Converter</a></li>
+      <li><a href="https://free-meme-generator.web-free.site/?ref=color-picker">Free Meme Generator</a></li>
+      <li><strong>Free Color Picker</strong></li>
+      <li><a href="https://free-gif-maker.web-free.site/?ref=color-picker">Free GIF Maker</a></li>
+      <li><a href="https://free-photo-editor.web-free.site/?ref=color-picker">Free Photo Editor</a></li>
+      <li><a href="https://free-logo-maker.web-free.site/?ref=color-picker">Free Logo Maker</a></li>
+    </ul></div>
+    <div class="wf-mt-cat"><h3>Calculators &amp; currency</h3><ul>
+      <li><a href="https://free-online-calculator.web-free.site/?ref=color-picker">Free Online Calculator</a></li>
+      <li><a href="https://free-currency-converter.web-free.site/?ref=color-picker">Free Currency Converter</a></li>
+      <li><a href="https://free-unit-converter.web-free.site/?ref=color-picker">Free Unit Converter</a></li>
+      <li><a href="https://free-loan-calculator.web-free.site/?ref=color-picker">Free Loan Calculator</a></li>
+      <li><a href="https://free-age-calculator.web-free.site/?ref=color-picker">Free Age Calculator</a></li>
+      <li><a href="https://free-percentage-calculator.web-free.site/?ref=color-picker">Free Percentage Calculator</a></li>
+      <li><a href="https://free-bmi-calculator.web-free.site/?ref=color-picker">Free BMI Calculator</a></li>
+    </ul></div>
+    <div class="wf-mt-cat"><h3>Text &amp; SEO</h3><ul>
+      <li><a href="https://free-ai-humanizer.web-free.site/?ref=color-picker">Free AI Humanizer</a></li>
+      <li><a href="https://free-seo-generator.web-free.site/?ref=color-picker">Free SEO Generator</a></li>
+      <li><a href="https://free-backlink-generator.web-free.site/?ref=color-picker">Free Backlink Generator</a></li>
+      <li><a href="https://free-json-formatter.web-free.site/?ref=color-picker">Free JSON Formatter</a></li>
+      <li><a href="https://free-text-to-speech.web-free.site/?ref=color-picker">Free Text to Speech</a></li>
+      <li><a href="https://free-speech-to-text.web-free.site/?ref=color-picker">Free Speech to Text</a></li>
+      <li><a href="https://free-diff-checker.web-free.site/?ref=color-picker">Free Diff Checker</a></li>
+      <li><a href="https://free-citation-generator.web-free.site/?ref=color-picker">Free Citation Generator</a></li>
+    </ul></div>
+    <div class="wf-mt-cat"><h3>Audio &amp; video</h3><ul>
+      <li><a href="https://free-video-to-mp3.web-free.site/?ref=color-picker">Free Video to MP3 Converter</a></li>
+      <li><a href="https://free-mp3-cutter.web-free.site/?ref=color-picker">Free MP3 Cutter</a></li>
+      <li><a href="https://free-screen-recorder.web-free.site/?ref=color-picker">Free Screen Recorder</a></li>
+      <li><a href="https://free-video-compressor.web-free.site/?ref=color-picker">Free Video Compressor</a></li>
+      <li><a href="https://free-video-to-gif.web-free.site/?ref=color-picker">Free Video to GIF Converter</a></li>
+      <li><a href="https://free-audio-converter.web-free.site/?ref=color-picker">Free Audio Converter</a></li>
+      <li><a href="https://free-video-converter.web-free.site/?ref=color-picker">Free Video Converter</a></li>
+    </ul></div>
+    <div class="wf-mt-cat"><h3>Files</h3><ul>
+      <li><a href="https://free-zip-tool.web-free.site/?ref=color-picker">Free ZIP Tool</a></li>
+    </ul></div>
+    <div class="wf-mt-cat"><h3>Test data</h3><ul>
+      <li><a href="https://free-fake-address-generator.web-free.site/?ref=color-picker">Free Fake Address Generator</a></li>
+      <li><a href="https://free-fake-name-generator.web-free.site/?ref=color-picker">Free Fake Name Generator</a></li>
+    </ul></div>
+    <div class="wf-mt-cat"><h3>Security &amp; passwords</h3><ul>
+      <li><a href="https://free-password-generator.web-free.site/?ref=color-picker">Free Password Generator</a></li>
+    </ul></div>
+    <div class="wf-mt-cat"><h3>Time</h3><ul>
+      <li><a href="https://free-time-zone-converter.web-free.site/?ref=color-picker">Free Time Zone Converter</a></li>
+    </ul></div>
+    <div class="wf-mt-cat"><h3>Drawing</h3><ul>
+      <li><a href="https://free-whiteboard.web-free.site/?ref=color-picker">Free Whiteboard</a></li>
+    </ul></div>
+    <div class="wf-mt-cat"><h3>Random &amp; pickers</h3><ul>
+      <li><a href="https://free-spin-wheel.web-free.site/?ref=color-picker">Free Spin Wheel</a></li>
+    </ul></div>
+  </div>
+</aside>`
+
+export const ANALYTICS_BEACON = `<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "3e2f5f96ab32442ebb6e6f650615b58a"}'></script><!-- End Cloudflare Web Analytics -->`
