@@ -5,6 +5,21 @@ const HOST = 'https://free-color-picker.web-free.site'
 const dist = path.resolve('dist')
 const baseHtml = fs.readFileSync(path.join(dist, 'index.html'), 'utf8')
 
+const homeFaq = [
+  {
+    q: 'Is this color picker free?',
+    a: 'Yes. Free Color Picker is free to use with no account. All processing happens in your browser.',
+  },
+  {
+    q: 'Which color formats are supported?',
+    a: 'You can work with HEX, RGB, HSL, HSV, HWB, and OKLCH, including alpha when your browser supports it.',
+  },
+  {
+    q: 'Do you store my colors?',
+    a: 'No server uploads. Your chosen color may be saved in local storage on your device for convenience.',
+  },
+]
+
 const pages = [
   {
     path: '/hex-color-picker',
@@ -14,6 +29,16 @@ const pages = [
     h1: 'HEX color picker',
     snippet:
       '<p>Use the sliders or type a #RRGGBB value. The tool validates your hex and shows matching RGB and HSL codes.</p>',
+    faq: [
+      {
+        q: 'What is a HEX color code?',
+        a: 'HEX uses six digits (and optional alpha) after # to describe red, green, and blue, for example #3366FF.',
+      },
+      {
+        q: 'Can I paste a hex code?',
+        a: 'Yes. Paste into the hex field; the picker updates all other formats automatically.',
+      },
+    ],
   },
   {
     path: '/color-picker-from-image',
@@ -23,6 +48,16 @@ const pages = [
     h1: 'Color picker from image',
     snippet:
       '<p>Choose a photo from your device, then click anywhere on the image to sample that pixel&apos;s color.</p>',
+    faq: [
+      {
+        q: 'Is my image uploaded to the internet?',
+        a: 'No. The file stays on your device; sampling uses the browser canvas API only.',
+      },
+      {
+        q: 'Which image formats work?',
+        a: 'Common formats such as JPEG, PNG, WebP, and GIF are supported by modern browsers.',
+      },
+    ],
   },
   {
     path: '/rgb-to-hex',
@@ -32,6 +67,16 @@ const pages = [
     h1: 'RGB to HEX converter',
     snippet:
       '<p>Adjust RGB channels or paste rgb(…) syntax. The hex field updates instantly so you can copy for CSS or design tools.</p>',
+    faq: [
+      {
+        q: 'How do I convert RGB to hex?',
+        a: 'Enter three numbers from 0–255 per channel; the picker shows the equivalent #RRGGBB code.',
+      },
+      {
+        q: 'Does it support alpha?',
+        a: 'Eight-digit hex (#RRGGBBAA) is available when you use RGBA or adjust the alpha slider.',
+      },
+    ],
   },
   {
     path: '/privacy',
@@ -64,6 +109,33 @@ const pages = [
   },
 ]
 
+function jsonLdScript(page) {
+  const url = page.path === '/' ? `${HOST}/` : `${HOST}${page.path}`
+  const graph = [
+    {
+      '@type': 'WebApplication',
+      name: 'Free Color Picker',
+      url,
+      applicationCategory: 'DesignApplication',
+      operatingSystem: 'Any',
+      offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+      inLanguage: 'en',
+    },
+  ]
+  if (page.faq?.length) {
+    graph.push({
+      '@type': 'FAQPage',
+      mainEntity: page.faq.map((f) => ({
+        '@type': 'Question',
+        name: f.q,
+        acceptedAnswer: { '@type': 'Answer', text: f.a },
+      })),
+    })
+  }
+  const data = { '@context': 'https://schema.org', '@graph': graph }
+  return `<script type="application/ld+json">${JSON.stringify(data)}</script>`
+}
+
 function buildPage(page) {
   const url = page.path === '/' ? `${HOST}/` : `${HOST}${page.path}`
   let html = baseHtml
@@ -90,6 +162,8 @@ function buildPage(page) {
   } else {
     html = html.replace('<div id="root"></div>', `${seoBlock}<div id="root"></div>`)
   }
+  html = html.replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>\s*/g, '')
+  html = html.replace('</head>', `${jsonLdScript(page)}\n  </head>`)
   return html
 }
 
@@ -108,6 +182,7 @@ fs.writeFileSync(path.join(dist, 'index.html'), buildPage({
   h1: 'Free Color Picker',
   snippet:
     '<p>Choose a color with sliders or paste a code. Copy HEX and RGB in one click. Based on the MIT colorpicker.dev project.</p>',
+  faq: homeFaq,
 }))
 
 console.log('Prerendered', pages.length + 1, 'route shells from Vite index.html')
