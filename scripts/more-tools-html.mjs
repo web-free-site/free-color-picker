@@ -53,7 +53,7 @@ export const MORE_TOOLS_BLOCK = `
       <li><a href="https://free-logo-maker.web-free.site/?ref=color-picker">Free Logo Maker</a></li>
     </ul></div>
     <div class="wf-mt-cat"><h3>Calculators &amp; currency</h3><ul>
-      <li><a href="https://free-online-calculator.web-free.site/?ref=color-picker">Free Online Calculator</a></li>
+      <li><a href="https://free-online-calculator.web-free.site/en/?ref=color-picker">Free Online Calculator</a></li>
       <li><a href="https://free-currency-converter.web-free.site/?ref=color-picker">Free Currency Converter</a></li>
       <li><a href="https://free-unit-converter.web-free.site/?ref=color-picker">Free Unit Converter</a></li>
       <li><a href="https://free-loan-calculator.web-free.site/?ref=color-picker">Free Loan Calculator</a></li>
